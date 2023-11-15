@@ -1,0 +1,18 @@
+<!--O custo de um carro novo ao consumidor é obtido com a seguinte fórmula:-->
+<input type="text" id="custoFabrica" placeholder="Custo de Fábrica">
+<input type="text" id="percDistribuidor" placeholder="% Distribuidor">
+<input type="text" id="percImpostos" placeholder="% Impostos">
+<button onclick="calcularCustoFinal()">Calcular Custo Final</button>
+<div id="valorfinal"></div>
+
+<script>
+  function calcularCustoFinal() {
+    var custoFabrica = parseFloat(document.getElementById("custoFabrica").value);
+    var percDistribuidor = parseFloat(document.getElementById("percDistribuidor").value);
+    var percImpostos = parseFloat(document.getElementById("percImpostos").value);
+
+    var custoFinal = custoFabrica + (custoFabrica * percDistribuidor / 100) + (custoFabrica * percImpostos / 100);
+
+    document.getElementById("valorfinal").innerHTML = "Valor Final: " + custoFinal;
+  }
+</script>
